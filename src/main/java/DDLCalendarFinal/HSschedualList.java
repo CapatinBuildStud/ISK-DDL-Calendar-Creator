@@ -32,9 +32,15 @@ public class HSschedualList {
 			Events events = service.events().list(CalID).setTimeMin(start).setTimeMax(end).execute();
 			List<Event> items = events.getItems();
 			for (int i = 0; i < items.size(); i++) {
+				//System.out.println(items.get(i).getSummary().length() + ", " + i + ", " + items.get(i).getSummary());
+				try {
 				if (items.get(i).getSummary().length() > 4) {
 					items.remove(i);
 					i--;
+				}
+				}
+				catch (NullPointerException e) {
+					i++;
 				}
 			}
 			return items;

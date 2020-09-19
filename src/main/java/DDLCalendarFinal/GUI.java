@@ -117,8 +117,6 @@ public class GUI {
 		panel.add(createEvents);
 		cancel.addActionListener(new CancelButtonAction());
 		createEvents.addActionListener(new CalenderButtonAction());
-
-		System.out.println("OpeningGUI");
 		
 		getFrame().setVisible(true);
 	}
