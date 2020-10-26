@@ -30,14 +30,14 @@ public class EventCreator {
 		for (Event event : items) {
 			order = event.getSummary();
 			date = event.getStart().getDate();
-			EventDateTime BLOCK1START = new EventDateTime().setDateTime(new DateTime(date + "T09:30:00+03:00"));
-			EventDateTime BLOCK2START = new EventDateTime().setDateTime(new DateTime(date + "T10:40:00+03:00"));
-			EventDateTime BLOCK3START = new EventDateTime().setDateTime(new DateTime(date + "T11:50:00+03:00"));
-			EventDateTime BLOCK4START = new EventDateTime().setDateTime(new DateTime(date + "T13:25:00+03:00"));
-			EventDateTime BLOCK1END = new EventDateTime().setDateTime(new DateTime(date + "T10:30:00+03:00"));
-			EventDateTime BLOCK2END = new EventDateTime().setDateTime(new DateTime(date + "T11:40:00+03:00"));
-			EventDateTime BLOCK3END = new EventDateTime().setDateTime(new DateTime(date + "T12:50:00+03:00"));
-			EventDateTime BLOCK4END = new EventDateTime().setDateTime(new DateTime(date + "T14:25:00+03:00"));
+			EventDateTime BLOCK1START = new EventDateTime().setDateTime(new DateTime(date + "T09:40:00+03:00"));
+			EventDateTime BLOCK2START = new EventDateTime().setDateTime(new DateTime(date + "T10:55:00+03:00"));
+			EventDateTime BLOCK3START = new EventDateTime().setDateTime(new DateTime(date + "T12:10:00+03:00"));
+			EventDateTime BLOCK4START = new EventDateTime().setDateTime(new DateTime(date + "T13:55:00+03:00"));
+			EventDateTime BLOCK1END = new EventDateTime().setDateTime(new DateTime(date + "T10:45:00+03:00"));
+			EventDateTime BLOCK2END = new EventDateTime().setDateTime(new DateTime(date + "T12:00:00+03:00"));
+			EventDateTime BLOCK3END = new EventDateTime().setDateTime(new DateTime(date + "T13:15:00+03:00"));
+			EventDateTime BLOCK4END = new EventDateTime().setDateTime(new DateTime(date + "T15:00:00+03:00"));
 			switch (order.substring(0, 1)) {
 			case "1":
 				this.addEvent(BLOCK1START, classes[0], BLOCK1END);
