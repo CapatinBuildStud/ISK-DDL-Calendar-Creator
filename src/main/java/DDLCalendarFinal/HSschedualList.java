@@ -38,6 +38,7 @@ public class HSschedualList {
 					items.remove(i);
 					i--;
 				}
+				items.get(i).getStart().getDate();
 				}
 				catch (NullPointerException e) {
 					i++;
