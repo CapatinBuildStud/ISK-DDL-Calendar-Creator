@@ -30,6 +30,11 @@ public class EventCreator {
 			order = items.get(i).getSummary();
 			try {
 				date = items.get(i).getStart().getDate();
+				if (date == null) {
+					i++;
+					date = items.get(i).getStart().getDate();
+				}
+				//System.out.println("date: " + date);
 
 				EventDateTime BLOCK1START = new EventDateTime().setDateTime(new DateTime(date + "T09:40:00+03:00"));
 				EventDateTime BLOCK2START = new EventDateTime().setDateTime(new DateTime(date + "T10:55:00+03:00"));
@@ -39,14 +44,27 @@ public class EventCreator {
 				EventDateTime BLOCK2END = new EventDateTime().setDateTime(new DateTime(date + "T12:00:00+03:00"));
 				EventDateTime BLOCK3END = new EventDateTime().setDateTime(new DateTime(date + "T13:15:00+03:00"));
 				EventDateTime BLOCK4END = new EventDateTime().setDateTime(new DateTime(date + "T15:00:00+03:00"));
-				if (date.toString().equalsIgnoreCase("2020-11-04") || date.toString().equalsIgnoreCase("2020-11-11")
-						|| date.toString().equalsIgnoreCase("2020-11-18")
-						|| date.toString().equalsIgnoreCase("2020-11-25")
-						|| date.toString().equalsIgnoreCase("2020-12-02")
-						|| date.toString().equalsIgnoreCase("2020-12-09")
-						|| date.toString().equalsIgnoreCase("2020-12-16")
-						|| date.toString().equalsIgnoreCase("2021-01-06")
-						|| date.toString().equalsIgnoreCase("2021-01-13")) {
+				if (date.toString().equalsIgnoreCase("2021-01-27") || date.toString().equalsIgnoreCase("2020-11-11")
+						|| date.toString().equalsIgnoreCase("2021-02-03")
+						|| date.toString().equalsIgnoreCase("2021-02-10")
+						|| date.toString().equalsIgnoreCase("2021-02-17")
+						|| date.toString().equalsIgnoreCase("2021-02-24")
+						|| date.toString().equalsIgnoreCase("2021-03-03")
+						|| date.toString().equalsIgnoreCase("2021-03-03")
+						|| date.toString().equalsIgnoreCase("2021-03-10")
+						|| date.toString().equalsIgnoreCase("2021-03-17")
+						|| date.toString().equalsIgnoreCase("2021-03-24")
+						|| date.toString().equalsIgnoreCase("2021-03-31")
+						|| date.toString().equalsIgnoreCase("2021-04-07")
+						|| date.toString().equalsIgnoreCase("2021-04-14")
+						|| date.toString().equalsIgnoreCase("2021-04-21")
+						|| date.toString().equalsIgnoreCase("2021-04-28")
+						|| date.toString().equalsIgnoreCase("2021-05-05")
+						|| date.toString().equalsIgnoreCase("2021-05-12")
+						|| date.toString().equalsIgnoreCase("2021-05-19")
+						|| date.toString().equalsIgnoreCase("2021-05-26")
+						|| date.toString().equalsIgnoreCase("2021-06-02")
+						|| date.toString().equalsIgnoreCase("2021-06-09")){
 					BLOCK1START = new EventDateTime().setDateTime(new DateTime(date + "T08:20:00+03:00"));
 					BLOCK2START = new EventDateTime().setDateTime(new DateTime(date + "T09:35:00+03:00"));
 					BLOCK3START = new EventDateTime().setDateTime(new DateTime(date + "T10:50:00+03:00"));

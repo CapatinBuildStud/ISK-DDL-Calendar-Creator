@@ -26,19 +26,22 @@ public class HSschedualList {
 	public static List<Event> getHSSchedual() throws IOException, GeneralSecurityException {
 
 		DateTime start = new DateTime(System.currentTimeMillis());
-		DateTime end = new DateTime("2021-01-15T16:39:57+03:00");
+		DateTime end = new DateTime("2021-06-18T16:39:57+03:00");
 		String CalID = "isk.ac.ke_a156g0rub49gp5oiribdta23c4@group.calendar.google.com";
 		try {
 			Events events = service.events().list(CalID).setTimeMin(start).setTimeMax(end).execute();
 			List<Event> items = events.getItems();
-			for (int i = 0; i < items.size(); i++) {
+			//System.out.println("length of calender:" + items.size());
+			for (int i = 1; i < items.size(); i++) {
 				//System.out.println(items.get(i).getSummary().length() + ", " + i + ", " + items.get(i).getSummary());
 				try {
-				if (items.get(i).getSummary().length() > 4) {
+				if (items.get(i).getSummary().length() > 4 || items.get(i).getStart().getDate() == null) {
+					//System.out.println("removed:" + items.get(i).getSummary() + " date: " + items.get(i).getStart().getDate());
 					items.remove(i);
 					i--;
+					
 				}
-				items.get(i).getStart().getDate();
+				//System.out.println(items.get(i).getStart().getDate());
 				}
 				catch (NullPointerException e) {
 					i++;
